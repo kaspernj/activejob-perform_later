@@ -1,0 +1,30 @@
+rvm: true
+builds:
+  build_1:
+    environment:
+      RUBY_VERSION: 2.3
+    script:
+      - rake test
+  build_2:
+    environment:
+      RUBY_VERSION: 2.4
+    script:
+      - rake test
+  build_3:
+    environment:
+      RUBY_VERSION: 2.5
+    script:
+      - rake test
+  build_4:
+    environment:
+      RUBY_VERSION: 2.6
+  build_1:
+    environment:
+      RUBY_VERSION: 2.7
+    script:
+      - rake test
+  build_1:
+    environment:
+      RUBY_VERSION: 3.0
+    script:
+      - rake test
