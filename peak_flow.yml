@@ -1,11 +1,5 @@
 rvm: true
 builds:
-  build_1:
-    environment:
-      RUBY_VERSION: 2.3.8
-    name: Ruby 2.3.8
-    script:
-      - rake test
   build_2:
     environment:
       RUBY_VERSION: 2.4.10
