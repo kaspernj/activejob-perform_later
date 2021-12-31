@@ -11,7 +11,7 @@ class ClassesInstanceMethodsOnDemandTest < ActiveSupport::TestCase
   end
 
   def test_enqueues_the_job_with_arguments
-    assert_enqueued_with(job: Activejob::PerformLater::Job, args: [TestClass.new, "six", [1, 2]]) do
+    assert_enqueued_with(job: Activejob::PerformLater::Job, args: [TestClass.new, "six", [1, 2], {}]) do
       TestClass.new.perform_later.six(1, 2)
     end
   end
@@ -37,7 +37,7 @@ class ClassesInstanceMethodsOnDemandTest < ActiveSupport::TestCase
   end
 
   def test_performs_the_job_with_arguments
-    assert_performed_with(job: Activejob::PerformLater::Job, args: [TestClass.new, "six", [1, 2]]) do
+    assert_performed_with(job: Activejob::PerformLater::Job, args: [TestClass.new, "six", [1, 2], {}]) do
       TestClass.new.perform_later.six(1, 2)
     end
   end
