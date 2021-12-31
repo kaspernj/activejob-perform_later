@@ -18,12 +18,14 @@ builds:
   build_4:
     environment:
       RUBY_VERSION: 2.6
-  build_1:
+    script:
+      - rake test
+  build_5:
     environment:
       RUBY_VERSION: 2.7
     script:
       - rake test
-  build_1:
+  build_6:
     environment:
       RUBY_VERSION: 3.0
     script:
