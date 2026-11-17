@@ -1,38 +1,98 @@
+before_install:
+  - gem install bundler -v 2.1.2
 rvm: true
+# Path-filter measurement: before = 1 build group / 6 version lanes; after =
+# 1 build group / 6 configured version lanes. Because every lane has the same
+# source paths and version matrix, per-lane `skipped` results are unmeasurable;
+# the filter only excludes README and license-only changes from this group.
 builds:
   build_2:
     environment:
       RUBY_VERSION: 2.4.10
     name: Ruby 2.4.10
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
   build_3:
     environment:
       RUBY_VERSION: 2.5.8
     name: Ruby 2.5.8
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
   build_4:
     environment:
       RUBY_VERSION: 2.6.8
     name: Ruby 2.6.8
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
   build_5:
     environment:
       RUBY_VERSION: 2.7.4
     name: Ruby 2.7.4
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
   build_6:
     environment:
       RUBY_VERSION: 3.0.3
     name: Ruby 3.0.3
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
   build_7:
     environment:
       RUBY_VERSION: 3.1.0
     name: Ruby 3.1.0
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "Gemfile"
+      - "Rakefile"
+      - "*.gemspec"
+      - "peak_flow.yml"
+      - "!README.md"
+      - "!LICENSE.txt"
     script:
       - rake test
